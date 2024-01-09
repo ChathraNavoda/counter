@@ -6,7 +6,7 @@ import 'package:counter/main.dart';
 void main() {
   testWidgets('MyHomePage widget renders correctly', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget( MyApp());
 
     // Verify if the MyHomePage title is rendered.
     expect(find.text('Flutter Demo Home Page'), findsOneWidget);
@@ -20,5 +20,39 @@ void main() {
     // Verify if the FloatingActionButton is rendered.
     expect(find.byIcon(Icons.add), findsOneWidget);
   });
+
+//Test for the FloatingActionButton
+   testWidgets('Tapping FloatingActionButton increments the counter', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget( MyApp());
+
+    // Tap the FloatingActionButton.
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+
+    // Verify if the counter value is updated after tapping.
+    expect(find.text('1'), findsOneWidget);
+  });
+
+
+ 
+  testWidgets('Tapping FloatingActionButton multiple times increments the counter', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget( MyApp());
+
+    // Tap the FloatingActionButton twice.
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+
+    // Verify if the counter value is updated after tapping twice.
+    expect(find.text('2'), findsOneWidget);
+  });
 }
 
+
+
+
+
+ 
