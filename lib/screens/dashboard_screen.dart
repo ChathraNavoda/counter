@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -12,7 +13,9 @@ class Dashboard extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           child: const Text("Profile"),
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).go("/profile");
+          },
         ),
       ),
     );

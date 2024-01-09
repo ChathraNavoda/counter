@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -12,7 +13,9 @@ class Profile extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           child: const Text("Dashborad"),
-          onPressed: (){},
+          onPressed: (){
+             GoRouter.of(context).go("/");
+          },
         ),
       ),
     );
