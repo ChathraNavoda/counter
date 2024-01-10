@@ -1,5 +1,6 @@
 import 'package:counter/counter.dart';
 import 'package:counter/screens/dashboard_screen.dart';
+import 'package:counter/screens/edit_profile_pic.dart';
 import 'package:counter/screens/manage_profile.dart';
 import 'package:counter/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +43,10 @@ class MyApp extends StatelessWidget {
      GoRoute(
       path: "/manage_profile",
       builder: ((context, state) => const ManageProfile()),
+    ),
+    GoRoute(
+      path: "/edit_pic",
+      builder: ((context, state) => const EditProfilePic()),
     ),
   ]);
 }
