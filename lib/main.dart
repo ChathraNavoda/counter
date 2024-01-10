@@ -1,5 +1,6 @@
 import 'package:counter/counter.dart';
 import 'package:counter/screens/dashboard_screen.dart';
+import 'package:counter/screens/manage_profile.dart';
 import 'package:counter/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Flutter Demo',
       routerConfig: _router,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -32,6 +34,14 @@ class MyApp extends StatelessWidget {
     GoRoute(
       path: "/profile",
       builder: ((context, state) => const Profile()),
+    ),
+     GoRoute(
+      path: "/profile",
+      builder: ((context, state) => const Profile()),
+    ),
+     GoRoute(
+      path: "/manage_profile",
+      builder: ((context, state) => const ManageProfile()),
     ),
   ]);
 }
