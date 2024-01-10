@@ -1,4 +1,5 @@
 import 'package:counter/counter.dart';
+import 'package:counter/screens/analyze_screen.dart';
 import 'package:counter/screens/dashboard_screen.dart';
 import 'package:counter/screens/edit_profile_pic.dart';
 import 'package:counter/screens/home_screen.dart';
@@ -38,8 +39,8 @@ class MyApp extends StatelessWidget {
       builder: ((context, state) => const Profile()),
     ),
      GoRoute(
-      path: "/profile",
-      builder: ((context, state) => const Profile()),
+      path: "/dashboard",
+      builder: ((context, state) => const Dashboard()),
     ),
      GoRoute(
       path: "/manage_profile",
@@ -48,6 +49,10 @@ class MyApp extends StatelessWidget {
     GoRoute(
       path: "/edit_pic",
       builder: ((context, state) => const EditProfilePic()),
+    ),
+     GoRoute(
+      path: "/analyze",
+      builder: ((context, state) => const Analyze()),
     ),
   ]);
 }

@@ -66,7 +66,7 @@ class Profile extends StatelessWidget {
           // Handle tab selection if needed
           if (index == 1) {
             // Navigate to the dashboard tab
-            GoRouter.of(context).go("/");
+            GoRouter.of(context).go("/dashboard");
           }
         },
       ),
