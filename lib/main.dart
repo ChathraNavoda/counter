@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,16 @@ class MyApp extends StatelessWidget {
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
+
   final GoRouter _router = GoRouter(routes: [
-    GoRoute(path: "/", builder: ((context, state)=> const Dashboard())),
-    GoRoute(path: "/profile", builder: ((context, state)=> const Profile())),
+    GoRoute(
+      path: "/",
+      builder: ((context, state) => const Dashboard()),
+    ),
+    GoRoute(
+      path: "/profile",
+      builder: ((context, state) => const Profile()),
+    ),
   ]);
 }
 
