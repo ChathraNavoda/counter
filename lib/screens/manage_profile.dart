@@ -13,7 +13,7 @@ class ManageProfile extends StatelessWidget {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              GoRouter.of(context).go("/");
+              GoRouter.of(context).go("/profile");
             },
           ),
           shape: const RoundedRectangleBorder(
