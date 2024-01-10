@@ -1,6 +1,7 @@
 import 'package:counter/counter.dart';
 import 'package:counter/screens/dashboard_screen.dart';
 import 'package:counter/screens/edit_profile_pic.dart';
+import 'package:counter/screens/home_screen.dart';
 import 'package:counter/screens/manage_profile.dart';
 import 'package:counter/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
   final GoRouter _router = GoRouter(routes: [
     GoRoute(
       path: "/",
-      builder: ((context, state) => const Dashboard()),
+      builder: ((context, state) => const Home()),
     ),
     GoRoute(
       path: "/profile",
