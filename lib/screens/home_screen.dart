@@ -20,10 +20,11 @@ class Home extends StatelessWidget {
               reverse: false,
               animate: true,
             ),
-            const SizedBox(height: 20), // Adjust the spacing between Lottie and the button
+            const SizedBox(
+                height: 20), // Adjust the spacing between Lottie and the button
             ElevatedButton(
               onPressed: () {
-                 GoRouter.of(context).go("/profile");
+                GoRouter.of(context).go("/profile");
                 print('Get Started button pressed!');
               },
               child: const Text('Get Started'),

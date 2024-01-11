@@ -22,7 +22,7 @@ class Analyze extends StatelessWidget {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              GoRouter.of(context).go("/dashboard");
+              GoRouter.of(context).go("/profile");
             },
           ),
           shape: const RoundedRectangleBorder(
@@ -40,7 +40,7 @@ class Analyze extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Expense Analysis',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),

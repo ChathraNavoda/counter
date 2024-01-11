@@ -38,11 +38,11 @@ class MyApp extends StatelessWidget {
       path: "/profile",
       builder: ((context, state) => const Profile()),
     ),
-     GoRoute(
+    GoRoute(
       path: "/dashboard",
       builder: ((context, state) => const Dashboard()),
     ),
-     GoRoute(
+    GoRoute(
       path: "/manage_profile",
       builder: ((context, state) => const ManageProfile()),
     ),
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       path: "/edit_pic",
       builder: ((context, state) => const EditProfilePic()),
     ),
-     GoRoute(
+    GoRoute(
       path: "/analyze",
       builder: ((context, state) => const Analyze()),
     ),

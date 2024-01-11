@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+
 class EditProfilePic extends StatefulWidget {
   const EditProfilePic({Key? key}) : super(key: key);
 
@@ -25,26 +26,28 @@ class _EditProfilePicState extends State<EditProfilePic> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          appBar: PreferredSize(
-  preferredSize: const Size.fromHeight(80.0),
-  child: AppBar(
-    leading: IconButton(
-      icon: const Icon(Icons.arrow_back),
-      onPressed: () {
-        // Handle back button press
-        GoRouter.of(context).go("/"); // You can replace "/" with the desired route
-      },
-    ),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(
-        bottom: Radius.circular(60),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(80.0),
+        child: AppBar(
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                // Handle back button press
+                GoRouter.of(context)
+                    .go("/manage_profile"); // You can replace "/" with the desired route
+              },
+            ),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(60),
+              ),
+            ),
+            title: const Text("Profile"),
+            centerTitle: true,
+            backgroundColor: Colors
+                .deepPurple.shade100 // Set the background color to light orange
+            ),
       ),
-    ),
-    title: const Text("Profile"),
-    centerTitle: true,
-    backgroundColor:  Colors.deepPurple.shade100// Set the background color to light orange
-  ),
-),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +58,7 @@ class _EditProfilePicState extends State<EditProfilePic> {
                 radius: 50,
               )
             else
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 50,
                 backgroundColor: Colors.grey,
               ),
