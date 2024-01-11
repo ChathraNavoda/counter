@@ -30,6 +30,7 @@ class Dashboard extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
+          
             const SizedBox(height: 20),
             Expanded(
               child: Container(
@@ -41,6 +42,7 @@ class Dashboard extends StatelessWidget {
                         color: Colors.purple.shade100,
                         value: 40,
                         title: 'Food',
+                        
                       ),
                       PieChartSectionData(
                         color: Colors.purple.shade200,
@@ -62,18 +64,14 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+              SizedBox(height: 10,),
             ElevatedButton(
               child: const Text("Analyze"),
               onPressed: () {
                 GoRouter.of(context).go("/analyze");
               },
             ),
-            const SizedBox(
-              height: 10,
-            ),
+             SizedBox(height: 10,),
           ],
         ),
       ),

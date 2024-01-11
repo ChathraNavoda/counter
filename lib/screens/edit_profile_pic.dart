@@ -33,8 +33,8 @@ class _EditProfilePicState extends State<EditProfilePic> {
               icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 // Handle back button press
-                GoRouter.of(context)
-                    .go("/manage_profile"); // You can replace "/" with the desired route
+                GoRouter.of(context).go(
+                    "/manage_profile"); // You can replace "/" with the desired route
               },
             ),
             shape: const RoundedRectangleBorder(
@@ -69,6 +69,24 @@ class _EditProfilePicState extends State<EditProfilePic> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard),
+            label: 'Dashboard',
+          ),
+        ],
+        currentIndex: 0,
+        onTap: (index) {
+          if (index == 0) {
+            GoRouter.of(context).go("/profile");
+          }
+        },
       ),
     );
   }

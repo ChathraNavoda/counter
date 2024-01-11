@@ -100,7 +100,7 @@ class ManageProfile extends StatelessWidget {
         currentIndex: 0,
         onTap: (index) {
           if (index == 1) {
-            GoRouter.of(context).go("/");
+            GoRouter.of(context).go("/dashboard");
           }
         },
       ),

@@ -51,6 +51,24 @@ class Analyze extends StatelessWidget {
           ],
         ),
       ),
+     bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard),
+            label: 'Dashboard',
+          ),
+        ],
+        currentIndex: 1,
+        onTap: (index) {
+          if (index == 0) {
+            GoRouter.of(context).go("/profile");
+          }
+        },
+      ),
     );
   }
 }
