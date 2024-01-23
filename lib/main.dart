@@ -1,21 +1,27 @@
 import 'package:counter/counter.dart';
+import 'package:counter/screens/analyze.dart';
+
 import 'package:counter/screens/dashboard_screen.dart';
+import 'package:counter/screens/edit_profile_pic.dart';
+import 'package:counter/screens/home_screen.dart';
+import 'package:counter/screens/manage_profile.dart';
 import 'package:counter/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Demo',
       routerConfig: _router,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -23,10 +29,62 @@ class MyApp extends StatelessWidget {
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
-  final GoRouter _router = GoRouter(routes: [
-    GoRoute(path: "/", builder: ((context, state)=> const Dashboard())),
-    GoRoute(path: "/profile", builder: ((context, state)=> const Profile())),
-  ]);
+final GoRouter _router = GoRouter(routes: [
+  GoRoute(
+    path: "/",
+    builder: (context, state) => const Home(),
+    routes: [
+      GoRoute(
+        path: "dashboard", // You can customize sub-route paths
+        builder: (context, state) => const Dashboard(),
+      ),
+      GoRoute(
+        path: "profile",
+        builder: (context, state) => const Profile(),
+      ),
+      GoRoute(
+    path: "analyze",
+    builder: (context, state) => const Analyze(),
+  ),
+   GoRoute(
+        path: "manage_profile",
+        builder: (context, state) => const ManageProfile(),
+      ),
+      GoRoute(
+        path: "edit_pic",
+        builder: (context, state) => const EditProfilePic(),
+      ),
+    ],
+  ),
+  
+  // Other routes can be added here
+]);
+  // final GoRouter _router = GoRouter(routes: [
+  //   GoRoute(
+  //     path: "/",
+  //     builder: ((context, state) => const Home()),
+  //   ),
+  //   GoRoute(
+  //     path: "/profile",
+  //     builder: ((context, state) => const Profile()),
+  //   ),
+  //   GoRoute(
+  //     path: "/dashboard",
+  //     builder: ((context, state) => const Dashboard()),
+  //   ),
+  //   GoRoute(
+  //     path: "/manage_profile",
+  //     builder: ((context, state) => const ManageProfile()),
+  //   ),
+  //   GoRoute(
+  //     path: "/edit_pic",
+  //     builder: ((context, state) => const EditProfilePic()),
+  //   ),
+  //   GoRoute(
+  //     path: "/analyze",
+  //     builder: ((context, state) => const Analyze()),
+  //   ),
+  // ]);
 }
 
 class MyHomePage extends StatefulWidget {
